@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar snapshot Comprobar la UI del componente NavBar 1`] = `
+<nav
+  className="text-white flex p-5 bg-primary-100 items-center shadow-md shadow-secondary-100/30 justify-between"
+>
+  <h1
+    className="font-title text-4xl"
+    id="Navbar-title"
+  >
+    Profiler
+  </h1>
+  <div
+    className="flex gap-4 text-lg"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
+    <a
+      href="/about"
+      onClick={[Function]}
+    >
+      About
+    </a>
+  </div>
+</nav>
+`;

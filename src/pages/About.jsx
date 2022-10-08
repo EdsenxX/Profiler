@@ -19,13 +19,13 @@ const About = () => {
               <p className="text-sm">JavaScript Developer</p>
             </div>
             <div className="flex gap-2 justify-center text-xl my-2">
-              <a href="https://github.com/EdsenxX">
+              <a href="https://github.com/EdsenxX" rel="noreferrer">
                 <i className="fa-brands fa-github"></i>
               </a>
-              <a href="https://www.linkedin.com/in/edsen/">
+              <a href="https://www.linkedin.com/in/edsen/" rel="noreferrer">
                 <i className="fa-brands fa-linkedin"></i>
               </a>
-              <a href="https://edsen.dev" target="_blank">
+              <a href="https://edsen.dev" target="_blank" rel="noreferrer">
                 <i className="fa-solid fa-earth-americas"></i>
               </a>
             </div>
