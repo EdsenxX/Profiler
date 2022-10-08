@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import Layout from "../components/Layout";
 import PersonCard from "../components/PersonCard";
 import Button from "../components/Button";
+import Loader from "../components/Loader";
 // Services
 import PeopleService from "../services/People";
 // Actions
@@ -14,19 +15,26 @@ const peopleService = new PeopleService();
 
 const Home = ({ peopleReducer, addPeople }) => {
   const [loading, setLoading] = useState(false);
+  const [mainLoading, setMainLoading] = useState(false);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
     const { people } = peopleReducer;
     if (people.length === 0) {
-      getPeople();
+      init();
     }
   }, []);
+
+  const init = async () => {
+    setMainLoading(true);
+    await getPeople();
+    setMainLoading(false);
+  };
 
   const getPeople = async () => {
     if (loading) return;
     setLoading(true);
-    peopleService
+    await peopleService
       .getPeople()
       .then((people) => {
         addPeople(people);
@@ -47,6 +55,7 @@ const Home = ({ peopleReducer, addPeople }) => {
     return filteredPeople;
   };
 
+  if (mainLoading) return <Loader />;
   return (
     <Layout>
       <div className="w-full flex justify-center mt-8 mb-16">
